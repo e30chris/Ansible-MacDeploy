@@ -11,6 +11,7 @@ Ansible installed, bonus would be to have Ansible installed via this.
 Role Variables
 --------------
 
+mac_username: local user on the Mac that is logged in and running this playbook.
 
 
 Dependencies
