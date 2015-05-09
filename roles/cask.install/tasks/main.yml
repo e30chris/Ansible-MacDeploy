@@ -13,7 +13,7 @@
       state=present
       line={{ item }}
     with_items:
-      - # Homebrew Cask Stuff
+      - # Homebrew Cask Stuffs
       - export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/etc/Caskroom"
 
   - name: Add the Casks
@@ -27,6 +27,7 @@
       - amazon-zocalo
       - anvil
       - appcleaner
+      - atom
       - backblaze
       - bartender
       - bitcoin-core
@@ -51,6 +52,7 @@
       - gpgtools
       - gramps
       - handbrake
+      - hipchat
       - imageoptim
       - iphone-backup-extractor
       - istumbler
