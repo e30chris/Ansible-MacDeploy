@@ -1,2 +1,89 @@
 ---
 # tasks file for brew.install
+
+  - name: Install Homebrew
+    raw: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+  - name: Update Homebrew
+    homebrew:
+      update_homebrew=yes
+      upgrade_all=yes
+
+  - name: Install some brews
+    homebrew:
+      name={{ item }} 
+      state=present
+    with_items:
+      - autoconf
+      - automake
+      - autossh
+      - aws-as  
+      - aws-cfn-tools 
+      - aws-cloudsearch
+      - aws-cloudsearch     
+      - aws-elasticache     
+      - aws-elasticbeanstalk
+      - aws-mon
+      - aws-sns-cli
+      - awscli
+      - boot2docker
+      - coreutils
+      - cowsay
+      - curl
+      - docker
+      - docker-completion
+      - gdbm
+      - git
+      - gnupg
+      - go
+      - grc
+      - hg
+      - homebrew/completions
+      - htop-osx
+      - hub
+      - iterm
+      - eybase
+      - libevent
+      - libtool
+      - libyaml
+      - mackup
+      - mactex
+      - makedepend
+      - mercurial
+      - nmap
+      - node
+      - npm
+      - openssl
+      - packer
+      - packer-completion
+      - pcre
+      - pkg-config
+      - python
+      - rbenv
+      - rbenv-gem-rehash
+      - readline
+      - ruby
+      - ruby-build
+      - park
+      - sqlite
+      - ssh-copy-id
+      - sshfs
+      - sshuttle
+      - tmux
+      - todo-txt
+      - vagrant
+      - vagrant-completions
+      - xz
+      - zsh
+      - zsh-completions
+
+  - name: Install brews with foam
+    homebrew:
+      name={{ item }}
+      state=head
+    with_items:
+      - ansible
+
+
+
+
