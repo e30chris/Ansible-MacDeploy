@@ -6,7 +6,8 @@ The goal is to deploy a Mac using mostly Homebrew.  Bonus goal would be to do po
 Requirements
 ------------
 
-Ansible installed, bonus would be to have Ansible installed via this.
+Ansible
+Homebrew
 
 Role Variables
 --------------
