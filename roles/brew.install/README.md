@@ -32,6 +32,6 @@ BSD
 
 Author Information
 ------------------
-
+Chris Livermore
 [@e30chris](https://twitter.com/e30chris)
 [Sandor Systems Scribbles](http://sandorsscribbl.es)

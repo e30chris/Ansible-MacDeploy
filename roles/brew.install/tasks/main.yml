@@ -71,7 +71,6 @@
       - sshuttle
       - tmux
       - todo-txt
-      - vagrant
       - vagrant-completions
       - xz
       - zsh
