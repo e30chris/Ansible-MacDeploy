@@ -1,0 +1,82 @@
+---
+# tasks file for cask.install
+
+  - name: Install Brew Caskroom
+    homebrew:
+      name=caskroom/cask/brew-cask
+      state=present
+
+  - name: Change the cask directory to /Applications
+    lineinfile:
+      dest=~/.zshrc
+      insertafter=EOF
+      state=present
+      line={{ item }}
+    with_items:
+      - # Homebrew Cask Stuff
+      - export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/etc/Caskroom"
+
+  - name: Add the Casks
+    homebrew_cask:
+      name={{ item }}
+      state=present
+    with_items:
+      - adium
+      - alfred
+      - amazon-music
+      - amazon-zocalo
+      - anvil
+      - appcleaner
+      - backblaze
+      - bartender
+      - bitcoin-core
+      - boot2docker-status
+      - caffeine
+      - chicken
+      - chrome-devtools
+      - cloak
+      - cord
+      - coreos-osx-gui
+      - cyberduck
+      - dash
+      - dayone-cli
+      - dogecoin
+      - dropbox
+      - ffmpegx
+      - firefox
+      - forklift
+      - gimp
+      - google-chrome
+      - google-hangouts
+      - gpgtools
+      - gramps
+      - handbrake
+      - imageoptim
+      - iphone-backup-extractor
+      - istumbler
+      - iterm2
+      - java
+      - joinme
+      - keepassx
+      - kindle
+      - kismac
+      - little-snitch
+      - macdown
+      - mactex
+      - macvim
+      - mailplane
+      - mamp
+      - mou
+      - nmap
+      - owasp-zap
+      - slack
+      - spotify
+      - sublime-text
+      - textwrangler
+      - torbrowser
+      - transmit
+      - tunnelblick
+      - virtualbox
+      - vlc
+      - whatsapp-pocket
+      - wireshark
