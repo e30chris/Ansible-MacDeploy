@@ -1,7 +1,7 @@
 ---
 # tasks file for brew.install
 
-  - name: Update Homebrew just once
+  - name: Update Homebrew
     homebrew:
       update_homebrew=yes
 

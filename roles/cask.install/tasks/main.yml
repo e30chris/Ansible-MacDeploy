@@ -1,7 +1,7 @@
 ---
 # tasks file for cask.install
 
-  - name: Update Homebrew first
+  - name: Update Homebrew
     homebrew:
       update_homebrew=yes
 
@@ -9,6 +9,13 @@
     homebrew:
       name=brew-cask
       state=present
+
+  - name: Setup the Caskroom
+    file:
+      path=/etc/Caskroom
+      owner="{{ macbook_user }}"
+      group=wheel
+      mode=0644
 
 #  - name: Change the cask directory to /Applications
 #    lineinfile:
