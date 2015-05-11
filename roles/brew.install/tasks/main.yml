@@ -24,7 +24,7 @@
       - cowsay
       - curl
       - docker
-      - completions/docker-completion
+      - homebrew/completions/docker-completion
       - gdbm
       - git
       - gnupg
@@ -45,7 +45,7 @@
       - npm
       - openssl
       - packer
-      - packer-completion
+      - homebrew/completions/packer-completion
       - pcre
       - pkg-config
       - python
@@ -62,7 +62,7 @@
       - todo-txt
       - xz
       - zsh
-      - zsh-completions
+      - homebrew/completions/zsh-completions
 
 
 
