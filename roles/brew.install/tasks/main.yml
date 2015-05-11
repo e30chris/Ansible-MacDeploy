@@ -61,13 +61,6 @@
       - zsh
       - zsh-completions
 
-  - name: Install brews with foam
-    homebrew:
-      name={{ item }}
-      state=head
-    with_items:
-      - ansible
-
 
 
 
