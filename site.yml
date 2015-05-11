@@ -3,7 +3,7 @@
 # main file to kick off tasks from
 
   - name: Homebrew some beers
-    hosts: localhost
+    hosts: 127.0.0.1
     remote_user: "{{ mac_username }}"
     roles:
       - brew.install
@@ -11,7 +11,7 @@
       - brews
 
   - name: Homebrew into some casks
-    hosts: localhost
+    hosts: 127.0.0.1
     remote_user: "{{ mac_username }}"
     roles:
       - cask.install
