@@ -12,8 +12,10 @@ This playbook must be run from a local connection via:
 ansible-playbook -i hosts site.yml --connection=local
 ```
 
-Ansible
-Homebrew installed -   
+
+
+Ansible installed
+Homebrew installed - 
   _ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"_
   
 Github Auth'd
@@ -42,7 +44,7 @@ Including an example of how to use your role (for instance, with variables passe
 License
 -------
 
-BSD
+GNU General Public License v2.0
 
 Author Information
 ------------------
