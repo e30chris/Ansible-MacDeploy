@@ -10,15 +10,15 @@
       name=brew-cask
       state=present
 
-  - name: Change the cask directory to /Applications
-    lineinfile:
-      dest=~/.zshrc
-      insertafter=EOF
-      state=present
-      line={{ item }}
-    with_items:
-      - # Homebrew Cask Stuffs
-      - export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/etc/Caskroom"
+#  - name: Change the cask directory to /Applications
+#    lineinfile:
+#      dest=~/.zshrc
+#     insertafter=EOF
+#      state=present
+#      line={{ item }}
+#    with_items:
+#      - # Homebrew Cask Stuffs
+#      - export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/etc/Caskroom"
 
   - name: Add the Casks
     homebrew_cask:
