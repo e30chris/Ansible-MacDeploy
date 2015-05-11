@@ -4,7 +4,7 @@
 
   - name: Homebrew some beers
     hosts: localhost
-    remote_user: {{ mac_username }}
+    remote_user: "{{ mac_username }}"
     roles:
       - brew.install
     tags:
@@ -12,7 +12,7 @@
 
   - name: Homebrew into some casks
     hosts: localhost
-    remote_user: {{ mac_username }}
+    remote_user: "{{ mac_username }}"
     roles:
       - cask.install
     tags:

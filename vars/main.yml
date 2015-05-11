@@ -2,4 +2,4 @@
 # vars file for Ansible-MacDeploy
 
 # the logged in user running this playbook.
-mac_username:
+mac_username: spudbud
