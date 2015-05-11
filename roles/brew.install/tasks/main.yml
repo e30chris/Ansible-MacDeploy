@@ -1,45 +1,33 @@
 ---
 # tasks file for brew.install
 
-  - name: Update Homebrew
-    homebrew:
-      update_homebrew=yes
-      upgrade_all=yes
+  - name: Tap the Binary keg
+    raw: brew tap homebrew/binary
 
   - name: Install some brews
     homebrew:
       name={{ item }} 
       state=present
+      update_homebrew=yes
     with_items:
       - autoconf
       - automake
       - autossh
-      - aws-as  
-      - aws-cfn-tools 
-      - aws-cloudsearch
-      - aws-cloudsearch     
-      - aws-elasticache     
-      - aws-elasticbeanstalk
-      - aws-mon
-      - aws-sns-cli
-      - awscli
       - boot2docker
       - coreutils
       - cowsay
       - curl
       - docker
-      - docker-completion
+      - homebrew/completions/docker-completion
       - gdbm
       - git
       - gnupg
       - go
       - grc
       - hg
-      - homebrew/completions
       - htop-osx
       - hub
-      - iterm
-      - eybase
+      - keybase
       - libevent
       - libtool
       - libyaml
