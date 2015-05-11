@@ -1,9 +1,6 @@
 ---
 # tasks file for brew.install
 
-  - name: Install Homebrew
-    raw: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
   - name: Update Homebrew
     homebrew:
       update_homebrew=yes
@@ -47,7 +44,6 @@
       - libtool
       - libyaml
       - mackup
-      - mactex
       - makedepend
       - mercurial
       - nmap

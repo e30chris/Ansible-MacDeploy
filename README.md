@@ -7,7 +7,11 @@ Requirements
 ------------
 
 Ansible
-Homebrew
+Homebrew installed -   
+  _ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"_
+  
+Github Auth'd
+Github API token set
 
 Role Variables
 --------------
