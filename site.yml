@@ -1,9 +1,6 @@
 ---
 # main file to kick off tasks from
   
-  - vars_files:
-    - passes
-
   - name: Homebrew some beers
     hosts: 127.0.0.1
     remote_user: "{{ mac_username }}"
@@ -15,6 +12,7 @@
   - name: Homebrew into some casks
     hosts: 127.0.0.1
     remote_user: "{{ mac_username }}"
+    vars_files: passes
     roles:
       - cask.install
     tags:
