@@ -12,7 +12,8 @@
   - name: Homebrew into some casks
     hosts: 127.0.0.1
     remote_user: "{{ mac_username }}"
-    vars_files: passes
+    vars_files: 
+      - passes
     roles:
       - cask.install
     tags:
