@@ -21,7 +21,7 @@
       - cowsay
       - curl
       - docker
-      - homebrew/completions/docker-completion
+      - completions/docker-completion
       - gdbm
       - git
       - gnupg
