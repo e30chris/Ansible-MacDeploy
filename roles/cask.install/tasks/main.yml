@@ -13,7 +13,7 @@
   - name: Setup the Caskroom
     file:
       path=/etc/Caskroom
-      owner="{{ macbook_user }}"
+      owner="{{ mac_username }}"
       group=wheel
       mode=0644
 
