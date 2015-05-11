@@ -8,6 +8,9 @@
   - name: Tap the Binary keg
     raw: brew tap homebrew/binary
 
+  - name: Tap the Completions keg
+    raw: brew tap homebrew/completions
+
   - name: Install some brews
     homebrew:
       name={{ item }} 
