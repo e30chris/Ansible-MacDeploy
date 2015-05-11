@@ -1,6 +1,10 @@
 ---
 # tasks file for brew.install
 
+  - name: Update Homebrew just once
+    homebrew:
+      update_homebrew=yes
+
   - name: Tap the Binary keg
     raw: brew tap homebrew/binary
 
@@ -8,7 +12,6 @@
     homebrew:
       name={{ item }} 
       state=present
-      update_homebrew=yes
     with_items:
       - autoconf
       - automake

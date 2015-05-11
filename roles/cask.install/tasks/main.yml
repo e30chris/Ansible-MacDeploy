@@ -1,6 +1,10 @@
 ---
 # tasks file for cask.install
 
+  - name: Update Homebrew first
+    homebrew:
+      update_homebrew=yes
+      
   - name: Install Brew Caskroom
     homebrew:
       name=caskroom/cask/brew-cask
