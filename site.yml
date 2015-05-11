@@ -1,0 +1,19 @@
+---
+
+# main file to kick off tasks from
+
+  - name: Homebrew some beers
+    hosts: localhost
+    remote_user: {{ mac_username }}
+    roles:
+      - brew.install
+    tags:
+      - brews
+
+  - name: Homebrew into some casks
+    hosts: localhost
+    remote_user: {{ mac_username }}
+    roles:
+      - cask.install
+    tags:
+      - casks
