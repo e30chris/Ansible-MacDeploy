@@ -41,7 +41,6 @@
       - atom
       - backblaze
       - bartender
-      - bitcoin-core
       - boot2docker-status
       - caffeine
       - chicken
@@ -91,4 +90,5 @@
       - virtualbox
       - vlc
       - whatsapp-pocket
+      - xquartz
       - wireshark
