@@ -54,7 +54,6 @@
       - spark
       - sqlite
       - ssh-copy-id
-      - sshfs
       - sshuttle
       - tmux
       - todo-txt
