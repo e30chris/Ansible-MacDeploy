@@ -51,7 +51,7 @@
       - readline
       - ruby
       - ruby-build
-      - park
+      - spark
       - sqlite
       - ssh-copy-id
       - sshfs
