@@ -17,6 +17,13 @@
       group=wheel
       mode=0744
 
+  - name: Add some brew taps
+    homebrew_tap:
+      tap="{{ item }}"
+      state=present
+    with_items:
+      - ethereum/ethereum
+
 #  - name: Change the cask directory to /Applications
 #    lineinfile:
 #      dest=~/.zshrc
@@ -53,6 +60,7 @@
       - dayone-cli
       - dogecoin
       - dropbox
+      - cpp-ethereum --devel --with-gui --successful
       - ffmpegx
       - firefox
       - forklift
