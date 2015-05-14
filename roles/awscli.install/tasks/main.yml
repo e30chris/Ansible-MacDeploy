@@ -16,5 +16,3 @@
       - aws-mon
       - aws-sns-cli
       - awscli
-
-  - name: 

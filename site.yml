@@ -3,7 +3,10 @@
   
   - name: Homebrew some beers
     hosts: 127.0.0.1
+    connection: local
     remote_user: "{{ mac_username }}"
+    vars_files:
+      - passes
     roles:
       - brew.install
     tags:
@@ -11,6 +14,7 @@
 
   - name: Homebrew into some casks
     hosts: 127.0.0.1
+    connection: local
     remote_user: "{{ mac_username }}"
     vars_files: 
       - passes
@@ -23,7 +27,18 @@
     hosts: 127.0.0.1
     connection: local
     remote_user: "{{ mac_username }}"
+    vars_files: 
+      - passes
     roles:
       - dotfile.config
     tags:
       - dotfiles
+
+  - name: Setup AWS Cli tools
+    hosts: 127.0.0.1
+    connection: local
+    remote_user: "{{ mac_username }}"
+    roles:
+      - awscli.install
+    tags:
+      - awscli
