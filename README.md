@@ -6,10 +6,10 @@ The goal is to deploy a Mac using mostly Homebrew.  Bonus goal would be to do po
 Requirements
 ------------
 
-This playbook must be run from a local connection via:
+This playbook is run from a local connection via:
 
 ```
-ansible-playbook -i hosts site.yml --connection=local
+ansible-playbook -i hosts site.yml
 ```
 
 
