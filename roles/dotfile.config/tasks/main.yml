@@ -3,7 +3,7 @@
 
   - name: Pull down the .dotfiles fork from GitHub
     git:
-      repo=ssh://git@github.com:e30chris/dotfiles.git
+      repo=https://github.com/e30chris/dotfiles.git
       dest=/home/{{ mac_username }}/.dotfiles
 
   - name: Put private env variables in localrc
