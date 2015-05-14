@@ -28,7 +28,7 @@
       - curl
       - docker
       - docker-completion
-      - cpp-ethereum --devel --with-gui --successful
+      - cpp-ethereum
       - gdbm
       - git
       - gnupg
