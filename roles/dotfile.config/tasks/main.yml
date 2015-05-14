@@ -28,7 +28,6 @@
       current_shell.stdout != '/usr/local/bin/zsh'
 
   - name: Setting brew'd zsh as default shell
-    sudo: yes
     remote_user: "{{ mac_username }}"
     shell: chsh -s /usr/local/bin/zsh
     when:
