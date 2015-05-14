@@ -1,2 +1,33 @@
 ---
 # tasks file for dotfile.config
+
+  - name: Pull down the .dotfiles fork from GitHub
+    git:
+      repo=ssh://git@github.com:e30chris/dotfiles.git
+      dest=/home/{{ mac_username }}/.dotfiles
+
+  - name: Put private env variables in localrc
+    file:
+      path=/home/{{ mac_username }}/.localrc
+      state=touch
+      owner="{{ mac_username }}"
+      mode=0600
+
+# Set zsh as the new shell
+  - name: Checking the current shell
+    shell: echo $SHELL
+    register: current_shell
+
+  - name: Adding brew'd zsh to /etc/shells
+    lineinfile:
+      dest=/etc/shells
+      line="/usr/local/bin/zsh"
+    when:
+      current_shell.stdout != '/usr/local/bin/zsh'
+
+  - name: Setting brew'd zsh as default shell
+    shell: chsh -s /usr/local/bin/zsh
+    when:
+      current_shell.stdout != '/usr/local/bin/zsh'
+
+
