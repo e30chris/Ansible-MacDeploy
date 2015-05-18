@@ -52,6 +52,7 @@
       - packer-completion
       - pcre
       - pkg-config
+      - pow
       - python
       - rbenv
       - rbenv-gem-rehash
