@@ -22,6 +22,7 @@
       path=/Users/{{ mac_username }}/.zshrc
       owner="{{ mac_username }}"
       state=touch
+    shell: source /Users/{{ mac_username }}/.zshrc
 
   - name: Change the cask directory to /Applications
     lineinfile:
