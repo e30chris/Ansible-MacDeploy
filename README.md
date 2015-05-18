@@ -9,7 +9,7 @@ Requirements
 This playbook is run from a local connection via:
 
 ```
-ansible-playbook -i hosts site.yml
+ansible-playbook -i hosts site.yml --ask-sudo-pass
 ```
 
 
