@@ -13,14 +13,23 @@ ansible-playbook -i hosts site.yml --ask-sudo-pass
 ```
 
 
-Homebrew installed - 
-  _ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"_
+Homebrew installed
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 Ansible installed via Brew
-  _brew install ansible --HEAD_
+
+```
+brew install ansible --HEAD
+```
 
 Github Auth'd
-  _cat ~/.ssh/id_rsa.pub & add that to GitHub_
+
+```
+cat ~/.ssh/id_rsa.pub & add that to GitHub
+```
 
 Github API token set
 
