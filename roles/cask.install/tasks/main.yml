@@ -17,15 +17,18 @@
       group=wheel
       mode=0744
 
-#  - name: Change the cask directory to /Applications
-#    lineinfile:
-#      dest=~/.zshrc
-#     insertafter=EOF
-#      state=present
-#      line={{ item }}
-#    with_items:
-#      - # Homebrew Cask Stuffs
-#      - export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/etc/Caskroom"
+  - name: Touch zshrc
+    file:
+      path=/Users/{{ mac_username }}/.zshrc
+      owner="{{ mac_username }}"
+      state=touch
+
+  - name: Change the cask directory to /Applications
+    lineinfile:
+      dest=~/.zshrc
+      insertafter=EOF
+      state=present
+      line="{{ cask_env }}"
 
   - name: Add the Casks
     homebrew_cask:
