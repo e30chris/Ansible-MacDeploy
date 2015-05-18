@@ -33,6 +33,13 @@ cat ~/.ssh/id_rsa.pub & add that to GitHub
 
 Github API token set
 
+_http://stackoverflow.com/questions/20130681/setting-github-api-token-for-homebrew#20130816_
+
+After the script has finished then run the .dotfiles setup script to complete the setup.
+
+```
+~/.dotfiles/script/bootstrap
+```
 
 Role Variables
 --------------
