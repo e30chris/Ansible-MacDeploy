@@ -33,4 +33,7 @@
     when:
       current_shell.stdout != '/usr/local/bin/zsh'
 
+  - name: Setup .dotfiles with script
+    shell: /Users/{{ mac_username }}/.dotfiles/script/bootstrap
+
 
