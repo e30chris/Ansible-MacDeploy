@@ -1,0 +1,73 @@
+---
+# tasks file for brew.install
+
+  - name: Update Homebrew
+    homebrew:
+      update_homebrew=yes
+
+  - name: Tap some kegs
+    homebrew_tap:
+      tap="{{ item }}"
+      state=present
+    with_items:
+      - ethereum/ethereum
+      - homebrew/completions
+      - homebrew/binary
+
+  - name: Install some brews
+    homebrew:
+      name={{ item }} 
+      state=present
+    with_items:
+      - autoconf
+      - automake
+      - autossh
+      - boot2docker
+      - coreutils
+      - cowsay
+      - curl
+      - docker
+      - docker-completion
+      - cpp-ethereum
+      - gdbm
+      - git
+      - gnupg
+      - go
+      - grc
+      - hg
+      - htop-osx
+      - hub
+      - keybase
+      - libevent
+      - libtool
+      - libyaml
+      - mackup
+      - makedepend
+      - mercurial
+      - nmap
+      - node
+      - npm
+      - openssl
+      - packer
+      - packer-completion
+      - pcre
+      - pkg-config
+      - python
+      - rbenv
+      - rbenv-gem-rehash
+      - readline
+      - ruby
+      - ruby-build
+      - spark
+      - sqlite
+      - ssh-copy-id
+      - sshuttle
+      - tmux
+      - todo-txt
+      - xz
+      - zsh
+      - zsh-completions
+
+
+
+

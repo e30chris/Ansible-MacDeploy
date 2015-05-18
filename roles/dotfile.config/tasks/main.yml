@@ -1,0 +1,39 @@
+---
+# tasks file for dotfile.config
+
+  - name: Pull down the .dotfiles fork from GitHub
+    git:
+      repo=https://github.com/e30chris/dotfiles.git
+      dest=/Users/{{ mac_username }}/.dotfiles
+
+  - name: Put private env variables in localrc
+    file:
+      path=/Users/{{ mac_username }}/.localrc
+      state=touch
+      owner="{{ mac_username }}"
+      mode=0600
+
+# Set zsh as the new shell
+  - name: Checking the current shell
+    shell: echo $SHELL
+    register: current_shell
+
+  - name: Adding brew'd zsh to /etc/shells
+    sudo: yes
+    remote_user: "{{ mac_username }}"
+    lineinfile:
+      dest=/etc/shells
+      line="/usr/local/bin/zsh"
+    when:
+      current_shell.stdout != '/usr/local/bin/zsh'
+
+  - name: Setting brew'd zsh as default shell
+    remote_user: "{{ mac_username }}"
+    shell: chsh -s /usr/local/bin/zsh
+    when:
+      current_shell.stdout != '/usr/local/bin/zsh'
+
+  - name: Setup .dotfiles with script
+    shell: /Users/{{ mac_username }}/.dotfiles/script/bootstrap
+
+

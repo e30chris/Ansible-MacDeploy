@@ -1,0 +1,100 @@
+---
+# tasks file for cask.install
+
+  - name: Update Homebrew
+    homebrew:
+      update_homebrew=yes
+
+  - name: Install Brew Caskroom
+    homebrew:
+      name=brew-cask
+      state=present
+
+  - name: Setup the Caskroom
+    file:
+      path=/etc/Caskroom
+      owner="{{ mac_username }}"
+      group=wheel
+      mode=0744
+
+  - name: Touch zshrc
+    file:
+      path=/Users/{{ mac_username }}/.zshrc
+      owner="{{ mac_username }}"
+      state=touch
+  
+  - name: Change the cask directory to /Applications
+    lineinfile:
+      dest=~/.zshrc
+      insertafter=EOF
+      state=present
+      line="export HOMEBREW_CASK_OPTS=\"--appdir=/Applications --caskroom=/etc/Caskroom\""
+
+  - name: Source .zshrc
+    shell: source /Users/{{ mac_username }}/.zshrc
+
+  - name: Add the Casks
+    homebrew_cask:
+      name={{ item }}
+      state=present
+    with_items:
+      - adium
+      - alfred
+      - amazon-music
+      - amazon-zocalo
+      - anvil
+      - appcleaner
+      - atom
+      - backblaze
+      - bartender
+      - boot2docker-status
+      - caffeine
+      - chicken
+      - chrome-devtools
+      - cloak
+      - cord
+      - coreos-osx-gui
+      - cyberduck
+      - dash
+      - dayone-cli
+      - dogecoin
+      - dropbox
+      - ffmpegx
+      - firefox
+      - forklift
+      - gimp
+      - google-chrome
+      - google-hangouts
+      - gpgtools
+      - gramps
+      - handbrake
+      - imageoptim
+      - iphone-backup-extractor
+      - istumbler
+      - iterm2
+      - java
+      - joinme
+      - keepassx
+      - kindle
+      - kismac
+      - little-snitch
+      - macdown
+      - mactex
+      - macvim
+      - mailplane
+      - mamp
+      - mou
+      - nmap
+      - owasp-zap
+      - slack
+      - spotify
+      - sublime-text
+      - textwrangler
+      - torbrowser
+      - transmit
+      - tunnelblick
+      - virtualbox
+      - vlc
+      - whatsapp-pocket
+      - xquartz
+      - wireshark
