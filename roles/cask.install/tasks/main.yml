@@ -22,16 +22,15 @@
       path=/Users/{{ mac_username }}/.zshrc
       owner="{{ mac_username }}"
       state=touch
-
-  - name: Source .zshrc
-    shell: source /Users/{{ mac_username }}/.zshrc
-
   - name: Change the cask directory to /Applications
     lineinfile:
       dest=~/.zshrc
       insertafter=EOF
       state=present
       line="{{ cask_env }}"
+      
+  - name: Source .zshrc
+    shell: source /Users/{{ mac_username }}/.zshrc
 
   - name: Add the Casks
     homebrew_cask:
