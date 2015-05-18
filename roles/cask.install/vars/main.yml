@@ -2,4 +2,3 @@
 # vars file for cask.install
 
 mac_username: spudbud
-cask_env: "export HOMEBREW_CASK_OPTS=\"--appdir=/Applications --caskroom=/etc/Caskroom\""

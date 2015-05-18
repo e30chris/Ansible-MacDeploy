@@ -27,8 +27,8 @@
       dest=~/.zshrc
       insertafter=EOF
       state=present
-      line="{{ cask_env }}"
-      
+      line="export HOMEBREW_CASK_OPTS=\"--appdir=/Applications --caskroom=/etc/Caskroom\""
+
   - name: Source .zshrc
     shell: source /Users/{{ mac_username }}/.zshrc
 
