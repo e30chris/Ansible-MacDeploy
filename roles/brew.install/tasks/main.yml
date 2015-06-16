@@ -69,6 +69,7 @@
       - tmux
       - todo-txt
       - xz
+      - wireshark
       - zsh
       - zsh-completions
 
