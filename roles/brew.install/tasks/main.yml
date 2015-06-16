@@ -45,6 +45,7 @@
       - makedepend
       - mercurial
       - mtr
+      - ncdu
       - nmap
       - node
       - npm
