@@ -66,6 +66,7 @@
       - sqlite
       - ssh-copy-id
       - sshuttle
+      - sysdig
       - tmux
       - todo-txt
       - xz
