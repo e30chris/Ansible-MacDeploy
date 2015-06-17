@@ -7,7 +7,7 @@
 
   - name: Install Brew Caskroom
     homebrew:
-      name=brew-cask
+      name=cask
       state=present
 
   - name: Setup the Caskroom
