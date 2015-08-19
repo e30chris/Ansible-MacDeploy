@@ -33,6 +33,7 @@
       - gdbm
       - git
       - gnupg
+      - gnu-tar
       - go
       - grc
       - hg
