@@ -41,13 +41,13 @@
       - adium
       - alfred
       - amazon-music
+      - amazon-workspaces
       - anvil
       - appcleaner
       - armory
       - atom
       - backblaze
       - bartender
-      - boot2docker-status
       - caffeine
       - chicken
       - chrome-devtools
@@ -82,7 +82,6 @@
       - macdown
       - mactex
       - macvim
-      - mailplane
       - mamp
       - nmap
       - owasp-zap
