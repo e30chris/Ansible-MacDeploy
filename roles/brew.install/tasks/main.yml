@@ -30,6 +30,7 @@
       - docker
       - docker-completion
       - cpp-ethereum
+      - fpp
       - gdbm
       - git
       - gnupg
