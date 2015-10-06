@@ -33,6 +33,7 @@
       - fpp
       - gdbm
       - git
+      - git-lfs
       - gnupg
       - gnu-tar
       - go
