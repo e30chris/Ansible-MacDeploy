@@ -9,17 +9,21 @@ Requirements
 This playbook is run from a local connection via:
 
 ```
-ansible-playbook -i hosts site.yml
+ansible-playbook -i hosts site.yml --ask-sudo-pass
 ```
 
 
-
-Ansible installed
 Homebrew installed - 
   _ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"_
-  
+
+Ansible installed via Brew
+  _brew install ansible --HEAD_
+
 Github Auth'd
+  _cat ~/.ssh/id_rsa.pub & add that to GitHub_
+
 Github API token set
+
 
 Role Variables
 --------------
