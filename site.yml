@@ -17,6 +17,7 @@
     hosts: 127.0.0.1
     connection: local
     remote_user: "{{ mac_username }}"
+    sudo: no
     roles:
       - brew.install
     tags:
@@ -26,6 +27,7 @@
     hosts: 127.0.0.1
     connection: local
     remote_user: "{{ mac_username }}"
+    sudo: no
     roles:
       - cask.install
     tags:
@@ -35,6 +37,7 @@
     hosts: 127.0.0.1
     connection: local
     remote_user: "{{ mac_username }}"
+    sudo: no
     roles:
       - dotfile.config
     tags:
@@ -44,6 +47,7 @@
     hosts: 127.0.0.1
     connection: local
     remote_user: "{{ mac_username }}"
+    sudo: no
     roles:
       - awscli.install
     tags:
