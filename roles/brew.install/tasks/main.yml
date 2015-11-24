@@ -3,12 +3,12 @@
 
   - name: Update Homebrew
     homebrew:
-      update_homebrew=yes
+      update_homebrew: yes
 
   - name: Tap some kegs
     homebrew_tap:
-      tap="{{ item }}"
-      state=present
+      tap: "{{ item }}"
+      state: present
     with_items:
       - ethereum/ethereum
       - homebrew/completions
@@ -16,8 +16,8 @@
 
   - name: Install some brews
     homebrew:
-      name={{ item }} 
-      state=present
+      name: {{ item }}
+      state: present
     with_items:
       - autoconf
       - automake
@@ -67,7 +67,3 @@
       - xz
       - zsh
       - zsh-completions
-
-
-
-
