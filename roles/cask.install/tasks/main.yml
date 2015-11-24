@@ -3,40 +3,40 @@
 
   - name: Update Homebrew
     homebrew:
-      update_homebrew=yes
+      update_homebrew: yes
 
   - name: Install Brew Caskroom
     homebrew:
-      name=brew-cask
-      state=present
+      name: brew-cask
+      state: present
 
   - name: Setup the Caskroom
     file:
-      path=/etc/Caskroom
-      owner="{{ mac_username }}"
-      group=wheel
-      mode=0744
+      path: /etc/Caskroom
+      owner: "{{ mac_username }}"
+      group: wheel
+      mode: 0744
 
   - name: Touch zshrc
     file:
-      path=/Users/{{ mac_username }}/.zshrc
-      owner="{{ mac_username }}"
-      state=touch
-  
+      path: /Users/{{ mac_username }}/.zshrc
+      owner: "{{ mac_username }}"
+      state: touch
+
   - name: Change the cask directory to /Applications
     lineinfile:
-      dest=~/.zshrc
-      insertafter=EOF
-      state=present
-      line="export HOMEBREW_CASK_OPTS=\"--appdir=/Applications --caskroom=/etc/Caskroom\""
+      dest: ~/.zshrc
+      insertafter: EOF
+      state: present
+      line: "export HOMEBREW_CASK_OPTS=\"--appdir=/Applications --caskroom=/etc/Caskroom\""
 
   - name: Source .zshrc
     shell: source /Users/{{ mac_username }}/.zshrc
 
   - name: Add the Casks
     homebrew_cask:
-      name={{ item }}
-      state=present
+      name: {{ item }}
+      state: present
     with_items:
       - adium
       - alfred
