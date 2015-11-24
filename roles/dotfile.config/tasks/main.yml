@@ -3,15 +3,15 @@
 
   - name: Pull down the .dotfiles fork from GitHub
     git:
-      repo=https://github.com/e30chris/dotfiles.git
-      dest=/Users/{{ mac_username }}/.dotfiles
+      repo: https://github.com/e30chris/dotfiles.git
+      dest: /Users/{{ mac_username }}/.dotfiles
 
   - name: Put private env variables in localrc
     file:
-      path=/Users/{{ mac_username }}/.localrc
-      state=touch
-      owner="{{ mac_username }}"
-      mode=0600
+      path: /Users/{{ mac_username }}/.localrc
+      state: touch
+      owner: "{{ mac_username }}"
+      mode: 0600
 
 # Set zsh as the new shell
   - name: Checking the current shell
@@ -22,8 +22,8 @@
     sudo: yes
     remote_user: "{{ mac_username }}"
     lineinfile:
-      dest=/etc/shells
-      line="/usr/local/bin/zsh"
+      dest: /etc/shells
+      line: "/usr/local/bin/zsh"
     when:
       current_shell.stdout != '/usr/local/bin/zsh'
 
@@ -35,5 +35,3 @@
 
   - name: Setup .dotfiles with script
     shell: /Users/{{ mac_username }}/.dotfiles/script/bootstrap
-
-
