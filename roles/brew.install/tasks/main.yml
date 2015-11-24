@@ -19,31 +19,72 @@
       name: {{ item }}
       state: present
     with_items:
+      - ansible
+      - argtable
+      - auto-scaling
       - autoconf
       - automake
       - autossh
-      - boot2docker
+      - boost
+      - boost-python
+      - brew-cask
+      - c-ares
+      - cmake
       - coreutils
       - cowsay
-      - curl
-      - docker
-      - docker-completion
       - cpp-ethereum
+      - cyrptopp
+      - curl
+      - d-bus
+      - dns-tracer
+      - docker
+      - docker-compose
+      - docker-machine
+      - fpp
       - gdbm
+      - geoip
+      - gettext
       - git
-      - gnupg
+      - git-lfs
+      - glib
+      - gmp
+      - gnu-tar
+      - gnutls
+      - gnu-time
+      - gnu-units
+      - gnu-which
+      - gnupg2
       - go
+      - gpg-agent
       - grc
       - hg
       - htop-osx
       - hub
+      - iftop
+      - jsoncpp
       - keybase
+      - leveldb
+      - libassuan
+      - libffi
+      - libgcrypt
+      - libgpg-error
+      - libjson-rpc-cpp
+      - libksba
+      - libmicrohttpd
+      - libtasn1
+      - libusb
+      - libusb-compat
       - libevent
       - libtool
       - libyaml
+      - luajit
       - mackup
       - makedepend
       - mercurial
+      - miniupnpc
+      - mtr
+      - ncdu
+      - nettle
       - nmap
       - node
       - npm
@@ -53,17 +94,30 @@
       - pcre
       - pkg-config
       - python
+      - p7zip
+      - pinentry
+      - pow
+      - pth
+      - qt5
       - rbenv
+      - rbenv-bundler
       - rbenv-gem-rehash
       - readline
       - ruby
       - ruby-build
+      - snappy
       - spark
       - sqlite
       - ssh-copy-id
       - sshuttle
+      - sysdig
       - tmux
       - todo-txt
+      - tree
+      - unrar
+      - wget
+      - wireshark
       - xz
+      - youtube-dl
       - zsh
       - zsh-completions
