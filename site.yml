@@ -1,6 +1,18 @@
 ---
 # main file to kick off tasks from
-  
+
+- hosts: all
+  remote_user: chris
+  sudo: no
+  vars_files:
+    - vars/main.yml
+    - awscli.install/vars/main.yml
+    - brew.install/vars/main.yml
+    - cask.install/vars/main.yml
+    - dotfile.config/vars/main.yml
+    - vagrant.app/vars/main.yml
+
+
   - name: Homebrew some beers
     hosts: 127.0.0.1
     connection: local
@@ -19,7 +31,7 @@
     tags:
       - casks
 
-  - name: Add .dotfiles 
+  - name: Add .dotfiles
     hosts: 127.0.0.1
     connection: local
     remote_user: "{{ mac_username }}"
