@@ -45,9 +45,8 @@
       - anvil
       - appcleaner
       - atom
+      - armory
       - backblaze
-      - bartender
-      - boot2docker-status
       - caffeine
       - chicken
       - chrome-devtools
@@ -72,7 +71,6 @@
       - iphone-backup-extractor
       - istumbler
       - iterm2
-      - java
       - joinme
       - keepassx
       - kindle
@@ -81,9 +79,7 @@
       - macdown
       - mactex
       - macvim
-      - mailplane
       - mamp
-      - mou
       - nmap
       - owasp-zap
       - slack
@@ -95,6 +91,5 @@
       - tunnelblick
       - virtualbox
       - vlc
-      - whatsapp-pocket
       - xquartz
       - wireshark
