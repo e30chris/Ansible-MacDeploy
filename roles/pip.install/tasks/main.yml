@@ -1,2 +1,47 @@
 ---
 # tasks file for pip.install
+
+  - name: install some pips
+    pip:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - ansible
+      - beautifulsoup4
+      - blessings
+      - botocore
+      - click
+      - colorama
+      - configobj
+      - docutils
+      - dopy
+      - ecdsa
+      - enum34
+      - Fabric
+      - feedparser
+      - fuzzyfinder
+      - Glances
+      - httplib2
+      - Jinja2
+      - jmespath
+      - krill
+      - MarkupSafe
+      - mercurial
+      - ordereddict
+      - paramiko
+      - pip
+      - prompt-toolkit
+      - psutil
+      - pyasn1
+      - pycrypto
+      - Pygments
+      - python-dateutil
+      - PyYAML
+      - requests
+      - rsa
+      - saws
+      - setuptools
+      - six
+      - vboxapi
+      - wcwidth
+      - wheel

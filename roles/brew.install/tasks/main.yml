@@ -16,7 +16,7 @@
 
   - name: Install some brews
     homebrew:
-      name: {{ item }}
+      name: "{{ item }}"
       state: present
     with_items:
       - ansible

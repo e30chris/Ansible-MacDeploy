@@ -31,11 +31,11 @@
       line: "export HOMEBREW_CASK_OPTS=\"--appdir=/Applications --caskroom=/etc/Caskroom\""
 
   - name: Source .zshrc
-    shell: source /Users/{{ mac_username }}/.zshrc
+    shell: "source /Users/{{ mac_username }}/.zshrc"
 
   - name: Add the Casks
     homebrew_cask:
-      name: {{ item }}
+      name: "{{ item }}"
       state: present
     with_items:
       - adium
