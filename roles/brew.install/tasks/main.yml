@@ -28,7 +28,6 @@
       - curl
       - dnstracer
       - docker
-      - docker-completion
       - cpp-ethereum
       - fpp
       - gdbm
