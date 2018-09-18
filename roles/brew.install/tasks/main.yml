@@ -7,12 +7,12 @@
 
   - name: Install some brews
     homebrew:
-      name: {{ item }} 
+      name: "{{ item }}"
       state: present
 
     debug:
       msg: "Homebrew installed {{ item }}"
-      
+
     with_items:
       - adns
       - argtable
