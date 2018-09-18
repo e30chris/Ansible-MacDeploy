@@ -2,7 +2,7 @@
 # main file to kick off tasks from
   
   - name: Homebrew some beers
-    hosts: local
+    hosts: 127.0.0.1
     connection: local
     roles:
       - brew.install
@@ -10,7 +10,7 @@
       - brews
 
   - name: Homebrew into some casks
-    hosts: local
+    hosts: 127.0.0.1
     connection: local
     roles:
       - cask.install
@@ -18,7 +18,7 @@
       - casks
 
   - name: Add .dotfiles 
-    hosts: local
+    hosts: 127.0.0.1
     connection: local
     roles:
       - dotfile.config
