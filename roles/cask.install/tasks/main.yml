@@ -10,9 +10,6 @@
       name: cask
       state: present
 
-    debug:
-      msg: "Homebrew installed Cask {{ item }}"
-
   - name: Add the Casks
     homebrew_cask:
       name: "{{ item }}"
