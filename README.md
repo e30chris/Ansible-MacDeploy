@@ -1,7 +1,7 @@
 Role Name
 =========
 
-The goal is to deploy a Mac using mostly Homebrew.  Bonus goal would be to do post install setup like adding Github and Amazon creds.
+The goal is to deploy a Mac using mostly Homebrew.
 
 Requirements
 ------------
@@ -9,9 +9,10 @@ Requirements
 This playbook is run from a local connection via:
 
 ```
-ansible-playbook -i hosts site.yml --ask-sudo-pass
+ansible-playbook site.yml --extra-vars mac_username=xxxxxx --connection=local
 ```
 
+First time runs must complete the following steps:
 
 Homebrew installed
 
@@ -22,7 +23,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 Ansible installed via Brew
 
 ```
-brew install ansible --HEAD
+brew install ansible
 ```
 
 Github Auth'd
@@ -51,16 +52,6 @@ Dependencies
 ------------
 
 
-
-Example Playbook
-----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
 License
 -------
 
@@ -71,4 +62,4 @@ Author Information
 
 Chris Livermore
 [@e30chris](https://twitter.com/e30chris)
-[Sandors Systems Scribbles](http://sandorsscribbl.es/)
+[SimplifyMy.Cloud](https://simplifymy.cloud)
