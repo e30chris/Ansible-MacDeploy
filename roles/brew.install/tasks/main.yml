@@ -13,7 +13,6 @@
     with_items:
       - adns
       - argtable
-      - auto-scaling
       - autoconf
       - automake
       - autossh
