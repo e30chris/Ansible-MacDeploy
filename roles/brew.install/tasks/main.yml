@@ -5,18 +5,14 @@
     homebrew:
       update_homebrew=yes
 
-  - name: Tap some kegs
-    homebrew_tap:
-      tap="{{ item }}"
-      state=present
-    with_items:
-      - homebrew/completions
-      - homebrew/binary
-
   - name: Install some brews
     homebrew:
-      name={{ item }} 
-      state=present
+      name: {{ item }} 
+      state: present
+
+    debug:
+      msg: "Homebrew installed {{ item }}"
+      
     with_items:
       - adns
       - argtable
