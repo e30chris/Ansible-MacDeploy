@@ -2,27 +2,24 @@
 # main file to kick off tasks from
   
   - name: Homebrew some beers
-    hosts: 127.0.0.1
+    hosts: local
     connection: local
-    remote_user: "{{ mac_username }}"
     roles:
       - brew.install
     tags:
       - brews
 
   - name: Homebrew into some casks
-    hosts: 127.0.0.1
+    hosts: local
     connection: local
-    remote_user: "{{ mac_username }}"
     roles:
       - cask.install
     tags:
       - casks
 
   - name: Add .dotfiles 
-    hosts: 127.0.0.1
+    hosts: local
     connection: local
-    remote_user: "{{ mac_username }}"
     roles:
       - dotfile.config
     tags:

@@ -32,5 +32,5 @@
     shell: chsh -s /usr/local/bin/zsh
     when:
       current_shell.stdout != '/usr/local/bin/zsh'
-
+...
 
