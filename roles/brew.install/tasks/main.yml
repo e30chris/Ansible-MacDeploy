@@ -16,6 +16,8 @@
       - autoconf
       - automake
       - autossh
+      - awscli
+      - aws-shell
       - c-ares
       - cmake
       - corectl
