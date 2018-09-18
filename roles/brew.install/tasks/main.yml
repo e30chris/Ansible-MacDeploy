@@ -57,7 +57,6 @@
       - govendor
       - gox
       - gperftools
-      - gpg-agent
       - hiredis
       - htop
       - htop-osx
