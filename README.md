@@ -61,5 +61,7 @@ Author Information
 ------------------
 
 Chris Livermore
+
 [@e30chris](https://twitter.com/e30chris)
+
 [SimplifyMy.Cloud](https://simplifymy.cloud)
