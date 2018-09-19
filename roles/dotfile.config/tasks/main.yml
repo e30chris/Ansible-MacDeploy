@@ -19,8 +19,7 @@
     register: current_shell
 
   - name: Adding brew'd zsh to /etc/shells
-    sudo: yes
-    remote_user: "{{ mac_username }}"
+    become: true
     lineinfile:
       dest: /etc/shells
       line: "/usr/local/bin/zsh"
