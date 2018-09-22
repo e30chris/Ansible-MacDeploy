@@ -3,6 +3,8 @@ OSX config
 
 Configure OSX with security improvements over the standard installation
 
+Using the excellent @drduh macOS Security and Privacy Guide
+
 Requirements
 ------------
 
