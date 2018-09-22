@@ -1,0 +1,32 @@
+---
+# tasks file for osx.config
+
+  - name: ensure screensaver locks are instant
+    command: "{{ item }}"
+    with_items:
+      - defaults write com.apple.screensaver askForPassword -int 1
+      - defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+  - name: ensure files are not hidden
+    command: defaults write com.apple.finder AppleShowAllFiles -bool true
+
+  - name: ensure Library folder is visible
+    command: chflags nohidden ~/Library
+
+  - name: ensure all file name extensions are shown
+    command: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+  - name: ensure the OSX firewall is enabled in stealth mode and logging
+    command: "{{ item }}"
+    become_method: sudo
+    with_items:
+      - /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+      - /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode on
+      - /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+
+  - name: ensure GPG is configured with strong opinions
+    copy:
+      src: files/gpg.conf
+      remote_src: no
+      dest: ~/.gnupg/gpg.conf
+...
