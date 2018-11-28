@@ -16,6 +16,48 @@
   - name: ensure all file name extensions are shown
     command: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
+  - name: ensure screenshots are saved in PNG format
+    command: defaults write com.apple.screencapture type -string "png"
+
+  - name: ensure shadows are disabled in screenshots
+    command: defaults write com.apple.screencapture disable-shadow -bool true
+
+  - name: ensure no icons for servers removeable media on the desktop
+    command: "{{ item }}"
+    with_items:
+      - defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
+      - defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
+      - defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
+      - defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
+
+  - name: ensure folders are kept on top when sorting by name in finder
+    command: defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+  - name: ensure no warnings when changing a file extension
+    command: defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+  - name: ensure the Library folder is visible
+    command: chflags nohidden ~/Library
+
+  - name: ensure hidden files are not hidden
+    command: defaults write com.apple.finder AppleShowAllFiles -bool true
+
+  - name: ensure ds_store files are not on network or usb volumes
+    command: "{{ item }}"
+    with_items:
+      - defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+      - defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+  - name: ensure a new finder window opens when a volume is mounted
+    command: "{{ item }}"
+    with_items:
+      - defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+      - defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+      - defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+
+  - name: ensure windows minimize into their app icon
+    command: defaults write com.apple.dock minimize-to-application -bool true
+    
   - name: ensure the OSX firewall is enabled in stealth mode and logging
     command: "{{ item }}"
     become_method: sudo
