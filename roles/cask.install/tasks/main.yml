@@ -3,7 +3,7 @@
 
   - name: Update Homebrew
     homebrew:
-      update_homebrew=yes
+      update_homebrew: yes
 
   - name: Install Brew Caskroom
     homebrew:
@@ -26,7 +26,6 @@
       - cord
       - cyberduck
       - dash
-      - dayone-cli
       - docker
       - dropbox
       - dupin
@@ -39,9 +38,7 @@
       - google-chrome
       - google-cloud-sdk
       - gpgtools
-      - gramps
       - imageoptim
-      - iphone-backup-extractor
       - istumbler
       - iterm2
       - keepassxc
@@ -53,7 +50,6 @@
       - macdown
       - mactex
       - mist
-      - mou
       - nmap
       - openemu
       - owasp-zap

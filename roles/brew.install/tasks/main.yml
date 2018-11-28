@@ -3,7 +3,7 @@
 
   - name: Update Homebrew
     homebrew:
-      update_homebrew=yes
+      update_homebrew: yes
 
   - name: Install some brews
     homebrew:
@@ -163,5 +163,3 @@
       - zsh-completions
       - zsh-syntax-highlighting
 ...
-
-
