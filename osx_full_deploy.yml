@@ -1,0 +1,12 @@
+---
+# playbook to run all playbooks to configure OSX
+
+- name: ensure osx is configured
+  hosts: localhost
+  connection: local
+  roles:
+    - osx_homebrew.yml
+    - osx_homebrew_casks.yml
+    - osx_config.yml
+    - osx_dotfiles.yml
+...

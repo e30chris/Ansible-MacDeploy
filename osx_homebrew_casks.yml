@@ -1,0 +1,14 @@
+---
+# playbook to ensure homebrew casks are installed
+- name: Homebrew into some casks
+  hosts: localhost
+  connection: local
+
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - cask.install
+  tags:
+    - casks
+...

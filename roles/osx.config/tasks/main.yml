@@ -16,6 +16,12 @@
   - name: ensure all file name extensions are shown
     command: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
+  - name: ensure finder opens in list
+    command: defaults write com.apple.Finder FXPreferredViewStyle Nlsv
+
+  - name: ensure a fast key repeat
+    command: defaults write NSGlobalDomain KeyRepeat -int 1
+
   - name: ensure screenshots are saved in PNG format
     command: defaults write com.apple.screencapture type -string "png"
 
@@ -36,9 +42,6 @@
   - name: ensure no warnings when changing a file extension
     command: defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-  - name: ensure the Library folder is visible
-    command: chflags nohidden ~/Library
-
   - name: ensure hidden files are not hidden
     command: defaults write com.apple.finder AppleShowAllFiles -bool true
 
@@ -57,7 +60,7 @@
 
   - name: ensure windows minimize into their app icon
     command: defaults write com.apple.dock minimize-to-application -bool true
-    
+
   - name: ensure the OSX firewall is enabled in stealth mode and logging
     command: "{{ item }}"
     become_method: sudo
@@ -65,6 +68,30 @@
       - /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
       - /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode on
       - /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+
+  - name: ensure safaris bookmark is hidden
+    command: defaults write com.apple.Safari ShowFavoritesBar -bool false
+
+  - name: ensure safari is setup for development work
+    command: "{{ item }}"
+    with_items:
+      - defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+      - defaults write com.apple.Safari IncludeDevelopMenu -bool true
+      - defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+      - defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
+      - defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+  - name: ensure the bottom left hot corner starts the screensaver
+    command: "{{ item }}"
+    with_items:
+      - defaults write com.apple.dock wvous-bl-corner -int 5
+      - defaults write com.apple.dock wvous-bl-modifier -int 0
+
+  - name: ensure a password lock on screensaver
+    command: "{{ item }}"
+    with_items:
+      - defaults write com.apple.screensaver askForPassword 1 > /dev/null 2>&1
+      - defaults write com.apple.screensaver askForPasswordDelay 0 > /dev/null 2>&1
 
   - name: ensure GPG is configured with strong opinions
     copy:
