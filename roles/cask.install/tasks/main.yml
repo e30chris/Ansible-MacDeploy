@@ -17,56 +17,33 @@
     with_items:
       - alfred
       - appcleaner
-      - atom
       - backblaze
       - caffeine
-      - charles
       - chicken
-      - chrome-devtools
-      - cord
       - cyberduck
-      - dash
-      - docker
-      - dropbox
-      - dupin
-      - exiftool
-      - ffmpegx
-      - flux
-      - forklift
-      - gimp
-      - github
+      - do-not-disturb
+      - firefox
       - google-chrome
-      - google-cloud-sdk
-      - gpgtools
+      - handbrake
       - imageoptim
       - istumbler
       - iterm2
       - keepassxc
       - keka
-      - keybase
       - kindle
-      - kismac
+      - knockknock
       - little-snitch
-      - macdown
-      - mactex
+      - lulu
+      - oversight
       - mist
-      - nmap
-      - openemu
       - owasp-zap
       - ricochet
       - signal
       - slack
       - spotify
-      - thunderbird
       - transmission
       - transmit
-      - tunnelblick
-      - unetbootin
-      - vagrant
-      - vagrant-manager
       - vlc
       - whatsapp
       - wireshark
-      - xccello
-      - zoomus
 ...
