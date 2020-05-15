@@ -10,7 +10,7 @@
       name: "{{ item }}"
       state: present
 
-    with_items:
+    loop:
       - adns
       - argtable
       - autoconf
